@@ -19,3 +19,10 @@ def test_song_extracts_track_number_from_audio_file():
         "tests/res/Acoda/Yours to Defend/ACODA - Yours To Defend - 01 The Future Is Yours To Defend.aiff")
 
     assert_that(the_song.track_number, equal_to(1))
+
+
+def test_song_extracts_album_name_from_audio_file():
+    the_song = Song(
+        "tests/res/Acoda/Yours to Defend/ACODA - Yours To Defend - 01 The Future Is Yours To Defend.aiff")
+
+    assert_that(the_song.album, equal_to_ignoring_case("Yours To Defend"))
