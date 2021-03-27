@@ -1,5 +1,5 @@
 
-from hamcrest import assert_that, calling, equal_to_ignoring_case, raises
+from hamcrest import assert_that, calling, equal_to, equal_to_ignoring_case, raises
 from ufo.song import Song
 
 
@@ -12,3 +12,10 @@ def test_song_extracts_song_name_from_audio_file():
         "tests/res/Acoda/Yours to Defend/ACODA - Yours To Defend - 01 The Future Is Yours To Defend.aiff")
 
     assert_that(the_song.name, equal_to_ignoring_case("The Future Is Yours To Defend"))
+
+
+def test_song_extracts_track_number_from_audio_file():
+    the_song = Song(
+        "tests/res/Acoda/Yours to Defend/ACODA - Yours To Defend - 01 The Future Is Yours To Defend.aiff")
+
+    assert_that(the_song.track_number, equal_to(1))
