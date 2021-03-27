@@ -14,7 +14,7 @@ class Song:
         return self._audio_tack['title'].value
 
     def get_track_number(self):
-        return 3929
+        return self._audio_tack['tracknumber'].value
 
     name = property(get_name)
     track_number = property(get_track_number)
