@@ -1,6 +1,10 @@
 
-from hamcrest import assert_that, equal_to
+from hamcrest import assert_that, calling, equal_to, raises
 from ufo.song import Song
+
+
+def test_song_throws_value_error_if_input_file_doesnt_exist():
+    assert_that((calling(Song).with_args("bad file path")), raises(ValueError))
 
 
 def test_song_extracts_song_name_from_audio_file():
