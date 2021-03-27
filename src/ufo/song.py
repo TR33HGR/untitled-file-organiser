@@ -11,7 +11,7 @@ class Song:
         self._audio_tack = music_tag.load_file(str(self._file))
 
     def get_name(self):
-        return str(self._audio_tack['title'])
+        return self._audio_tack['title'].value
 
     def get_track_number(self):
         return 3929
